@@ -9,11 +9,11 @@ app = Flask(__name__)
 
 
 def getFilename(s):
-  new_file_name = ''
-  if all(x in s for x in ['/', '.']):
-    return s.split('/')[-1]
-  else:
-    return 'raw.bin'
+    new_file_name = ''
+    if all(x in s for x in ['/', '.']):
+        return s.split('/')[-1]
+    else:
+        return 'raw.bin'
 # Create your views here.
 @app.route('/', methods="GET")
 def index():
