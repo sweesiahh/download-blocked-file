@@ -15,7 +15,7 @@ def getFilename(s):
     else:
         return 'raw.bin'
 # Create your views here.
-@app.route('/', methods="GET")
+@app.route('/', methods=["GET"])
 def index():
     # Get URL to download from
     url = request.args.get("url", default="")
