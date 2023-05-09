@@ -21,7 +21,7 @@ def index():
     url = request.args.get("url", default="")
     password = request.args.get("password", default="")
     if not url:
-        return
+        return "please specify url."
     if not password:
         password = "1234"
     # Generate
