@@ -1,4 +1,5 @@
 import os
+from io import BytesIO
 import subprocess
 import random
 import string
@@ -47,7 +48,7 @@ def index():
     f.close()
     # Delete encrypted file after reading contents into memory
     subprocess.Popen(['rm', enc_name]).wait()
-
+    file = BytesIO(data)
     # Return encrypted file
 
-    return send_file(data, as_attachment=True, download_name=enc_name)
+    return send_file(file, as_attachment=True, download_name=enc_name)
