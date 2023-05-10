@@ -14,7 +14,7 @@ urlElem.addEventListener('keypress', function(e){
   if (e.keyCode == 13) {
     url = urlElem.value
     password = passwordElem.value;
-    newUrl = craftUrl(url)
+    newUrl = craftUrl(url, password)
     updateLink(newUrl)
   }
 }); 
@@ -22,7 +22,7 @@ passwordElem.addEventListener('keypress', function(e){
   if (e.keyCode == 13) {
     url = urlElem.value
     password = passwordElem.value;
-    newUrl = craftUrl(url)
+    newUrl = craftUrl(url, password)
     updateLink(newUrl)
   }
 }); 
