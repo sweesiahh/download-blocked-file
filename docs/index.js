@@ -1,4 +1,4 @@
-function craftUrl(url,) {
+function craftUrl(url, password) {
   return `https://download-blocked-file.onrender.com/?url=${url}&password=${password}`
 }
 
@@ -13,7 +13,15 @@ var passwordElem = document.getElementById('passwordField');
 urlElem.addEventListener('keypress', function(e){
   if (e.keyCode == 13) {
     url = urlElem.value
-    password = document.getElementById('passwordField');
+    password = passwordElem.value;
+    newUrl = craftUrl(url)
+    updateLink(newUrl)
+  }
+}); 
+passwordElem.addEventListener('keypress', function(e){
+  if (e.keyCode == 13) {
+    url = urlElem.value
+    password = passwordElem.value;
     newUrl = craftUrl(url)
     updateLink(newUrl)
   }
